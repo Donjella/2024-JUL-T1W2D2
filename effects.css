@@ -33,29 +33,67 @@ img {
     width: 300px;
 }
 
+
 .second {
     width: 100px;
     height: 100px;
     background-color: blue;
     animation-name: animation-for-second;
-    animation-duration: 10s;
+    animation-duration: 2s;
     animation-iteration-count: infinite;
 }
 
-
 @keyframes animation-for-second {
     0% {
-        width: 100px
+        width: 100px;
     }
-
     25% {
         width: 50px;
     }
-
     50% {
         width: 200px;
     }
+    75% {
+        width: 400px;
+    }
     100% {
         width: 100px;
+    }
+}
+
+.parent-typing-effect {
+    margin-top: 50px;
+    display: flex;
+}
+
+.typing-effect {
+    font-size: 24px;
+    animation: typing-effect .5s, change-width 5s steps(32, end);
+    animation-iteration-count: infinite;
+    
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@keyframes change-width {
+    0% {
+        width: 0;
+    }
+    25% {
+        width: 0;
+    }
+    50% {
+        width: 100%;
+    }
+}
+
+@keyframes typing-effect {
+    0% {
+        
+        border-right: none;
+    }
+    50% {
+        
+        border-right: 1px solid black;
     }
 }
